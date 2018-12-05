@@ -25,7 +25,7 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model,NormalCar ncar) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -36,11 +36,8 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		
-		BeanFactory bf = new ClassPathXmlApplicationContext("beans.xml");
-		Car car = bf.getBean("car", NormalCar.class);
-		
-		car.run();
-		car.stop();
+		ncar.run();
+		ncar.stop();
 		
 		
 		return "home";

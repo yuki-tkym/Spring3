@@ -1,8 +1,8 @@
 package com.example.demo;
 
 public class NormalCar implements Car{
-	private String velocity;
-	private String distance;
+	private String velocity = "34km/h";
+	private String distance = "3.6km";
 	
 	public void setVelocity(String velocity) {
 		this.velocity = velocity;
